@@ -52,7 +52,7 @@ export async function buyCourse(token , courses , userDetails , navigate , dispa
             key: "rzp_test_pDNyh4RMw2bfx9", // Enter the Key ID generated from the Dashboard
             amount: `${orderResponse.data.data.amount}`,
             currency: orderResponse.data.data.currency,
-            name: "Study Notion",
+            name: "Codify",
             description: "Thank you for purchasing the course",
             image: { rzpLogo },
             order_id: orderResponse.data.data.id,
