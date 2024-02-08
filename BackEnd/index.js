@@ -35,6 +35,13 @@ app.use(
     })
 )
 
+app.options("" ,     cors({
+        origin : "http://localhost:3000",
+        credential : true,
+        methods : ["GET" , "POST" , "PUT" , "DELETE"],
+
+    }) ) 
+
 
 app.listen(PORT, () => {
   console.log(`Started Running At Port ${PORT}`);
