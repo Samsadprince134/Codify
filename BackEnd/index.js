@@ -62,7 +62,7 @@ app.listen(PORT, () => {
  dbConnect();
  cloudinaryConnect();
 
-app.use("/api/v1/auth", corsHandler() ,  userRoute);
+app.use("/api/v1/auth",  userRoute);
 app.use("/api/v1/contact", contactRoute);
 app.use("/api/v1/profile", profileRoute);
 app.use("/api/v1/payment", paymentRoute);
