@@ -28,7 +28,7 @@ app.use(
 
 app.use(
     cors({
-        origin : "*",
+        origin : "https://codify-frontend-one.vercel.app/",
         credentials : true,
         methods : ["GET" , "POST" , "PUT" , "DELETE"],
 
