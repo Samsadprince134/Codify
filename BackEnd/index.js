@@ -36,7 +36,7 @@ app.use(
 
 app.use(
     cors({
-        origin : "https://codify-frontend-one.vercel.app",
+        origin : "http://codify-frontend-one.vercel.app",
         credentials : true,
         methods : ["GET" , "POST" , "PUT" , "DELETE"],
 
@@ -44,7 +44,7 @@ app.use(
 )
 
 app.options("" ,     cors({
-        origin : "https://codify-frontend-one.vercel.app/",
+        origin : "http://codify-frontend-one.vercel.app/",
         credential : true,
         methods : ["GET" , "POST" , "PUT" , "DELETE"],
 
