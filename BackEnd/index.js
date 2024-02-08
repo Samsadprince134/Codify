@@ -16,12 +16,15 @@ app.use(cookieParser());
 const fileUpload = require("express-fileupload");
 
 
+
+function corsHandler() {
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', 'https://codify-frontend-one.vercel.app');
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
     next();
 });
+}
 
 
 app.use(
@@ -43,7 +46,7 @@ app.use(
     })
 )
 
-app.options("" ,     cors({
+app.options("" ,      cors({
         origin : "https://codify-frontend-one.vercel.app/",
         credential : true,
         methods : ["GET" , "POST" , "PUT" , "DELETE"],
@@ -59,7 +62,7 @@ app.listen(PORT, () => {
  dbConnect();
  cloudinaryConnect();
 
-app.use("/api/v1/auth", userRoute);
+app.use("/api/v1/auth", corsHandler() ,  userRoute);
 app.use("/api/v1/contact", contactRoute);
 app.use("/api/v1/profile", profileRoute);
 app.use("/api/v1/payment", paymentRoute);
