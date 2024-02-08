@@ -41,7 +41,7 @@ app.use(
 )
 
 app.options("" ,     cors({
-        origin : "http://localhost:3000",
+        origin : "https://codify-frontend-one.vercel.app/",
         credential : true,
         methods : ["GET" , "POST" , "PUT" , "DELETE"],
 
