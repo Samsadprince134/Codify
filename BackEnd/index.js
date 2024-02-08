@@ -26,21 +26,21 @@ app.use(
 
 
 
-// app.use(
-//     cors({
-//         origin : "*",
-//         credential : true,
-//         methods : ["GET" , "POST" , "PUT" , "DELETE"],
+app.use(
+    cors({
+        origin : "*",
+        credential : true,
+        methods : ["GET" , "POST" , "PUT" , "DELETE"],
 
-//     })
-// )
+    })
+)
 
-// app.options("" ,     cors({
-//         origin : "http://localhost:3000",
-//         credential : true,
-//         methods : ["GET" , "POST" , "PUT" , "DELETE"],
+app.options("" ,     cors({
+        origin : "http://localhost:3000",
+        credential : true,
+        methods : ["GET" , "POST" , "PUT" , "DELETE"],
 
-//     }) ) 
+    }) ) 
 
 
 app.listen(PORT, () => {
