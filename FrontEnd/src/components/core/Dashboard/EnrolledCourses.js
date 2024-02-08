@@ -8,6 +8,7 @@ export default function EnrolledCourses() {
 
 const {token} = useSelector((state) => state.auth);
 const [enrolledCourses , setenrolledCourses] = useState(null);
+const TRUNCATE_LENGTH = 30
 const [loading , setLoading] = useState(false)
 const navigate = useNavigate()
     async function fetchdata(){
@@ -58,7 +59,8 @@ const navigate = useNavigate()
 
                                        
                                          <div className='font-semibold'>{course.courseName}</div>
-                                         <div className='font-semibold text-richblack-400 text-xs '>{course.description}</div>
+                                         <div className='font-semibold text-richblack-400 text-xs '>{course.description.split(" ").length >
+                      TRUNCATE_LENGTH ? course.description.split(" ").slice(0, TRUNCATE_LENGTH).join(" ") + "..." : course.description}</div>
                                          </div>
 
                                        </div>
