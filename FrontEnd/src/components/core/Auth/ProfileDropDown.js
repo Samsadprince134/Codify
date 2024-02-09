@@ -6,7 +6,7 @@ import { Link, useNavigate } from "react-router-dom"
 import useOnClickOutside from "use-onclickoutside"
 import { logout } from "../../services/operations/authAPI"
 
-export default function ProfileDropdown() {
+export default function ProfileDropdown({setNavBarModel}) {
   const { user } = useSelector((state) => state.profile)
   const dispatch = useDispatch()
   const navigate = useNavigate()
@@ -34,8 +34,8 @@ export default function ProfileDropdown() {
           ref={ref}
         >
           <Link to="/dashboard/my-profile" onClick={() => setOpen(false)}>
-            <div className="flex w-full items-center gap-x-1 py-[10px] px-[12px] text-sm text-richblack-100 hover:bg-richblack-700 hover:text-richblack-25">
-              <VscDashboard className="text-lg" />
+            <div className="flex w-full items-center gap-x-1 py-[10px] px-[12px] text-sm text-richblack-100 hover:bg-richblack-700 hover:text-richblack-25 onClick={() => setNavBarModel(false)}">
+              <VscDashboard className="text-lg"  />
               Dashboard
             </div>
           </Link>
@@ -43,6 +43,7 @@ export default function ProfileDropdown() {
             onClick={() => {
               dispatch(logout(navigate))
               setOpen(false)
+              setNavBarModel(false)
             }}
             className="flex w-full items-center gap-x-1 py-[10px] px-[12px] text-sm text-richblack-100 hover:bg-richblack-700 hover:text-richblack-25"
           >
