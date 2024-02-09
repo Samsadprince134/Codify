@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { Link, matchPath } from 'react-router-dom'
-import logo from "../../assets/Logo/Logo-Full-Light.png"
 import {NavbarLinks} from "../../data/navbar-links"
 import { FaCartPlus } from "react-icons/fa";
 import { AiOutlineMenu} from "react-icons/ai"
@@ -12,10 +11,12 @@ import { categories } from '../services/apis';
 import { IoIosArrowDown } from "react-icons/io";
 import { apiConnector } from '../services/apiconnector';
 import CLogo from '../../assets/Logo/CLogo.png'
+import NavBarModal from "../core/NavBarModal"
 export default function Navbar() {
   const {token} = useSelector((state) => state.auth)
   const {user} = useSelector((state) => state.profile);
   const {totalItems} = useSelector((state) => state.cart)
+  const [navBarModel , setNavBarModel] = useState(false)
   const location = useLocation()
     function matchRoute (route){
         return matchPath({path:route}, location.pathname)
@@ -24,6 +25,7 @@ export default function Navbar() {
     async function fetchLink(){
         try{
             const  result = await apiConnector("GET" , categories.CATEGORIES_API)
+           
             console.log("printing sublink result --> ", result.data.data)
             setsubLinks(result.data.data)
 
@@ -155,8 +157,10 @@ export default function Navbar() {
         
             </div>
             <button className="mr-4 md:hidden">
-          <AiOutlineMenu fontSize={24} fill="#AFB2BF" />
+          <AiOutlineMenu fontSize={24} fill="#AFB2BF" onClick={() => setNavBarModel(true)} />
         </button>
+
+        {navBarModel && <NavBarModal setNavBarModel = {setNavBarModel}></NavBarModal>}
 
         </div>
     </div>
