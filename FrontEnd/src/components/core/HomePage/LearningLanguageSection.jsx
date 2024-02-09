@@ -7,7 +7,7 @@ import Plan_your_lessons from "../../../assets/Images/Plan_your_lessons.svg";
 
 const LearningLanguageSection = () => {
   return (
-    <div className='border border-blue-800'>
+    <div >
         <div className="text-4xl font-semibold text-center my-10">
             Your swiss knife for
             <HighlightText text={"learning any language"} />
