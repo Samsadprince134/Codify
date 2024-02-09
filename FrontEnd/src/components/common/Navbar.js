@@ -43,7 +43,7 @@ export default function Navbar() {
     }, [])
     
   return (
-    <div className='flex h-14 items-center  border-b border-richblack-700  w-full fixed bg-richblack-900  z-60'>
+    <div className='flex h-14 items-center  border-b border-richblack-700  w-full fixed bg-richblack-900  z-50'>
         <div className='w-11/12  max-w-maxContent  mx-auto flex justify-between mt-2 items-center  '>
             <Link to={"/"}>
 
