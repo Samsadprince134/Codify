@@ -22,7 +22,7 @@ export default function Cart() {
 
           
           <div className=" text-5xl font-semibold">Your Cart is Empty</div>
-          <Link to="/catalog/C++" className="flex justify-center mt-4 items-center rounded-lg text-richblack-900  font-semibold bg-yellow-50 py-2 px-8 w-max">
+          <Link to="/catalog/WebDevelopment" className="flex justify-center mt-4 items-center rounded-lg text-richblack-900  font-semibold bg-yellow-50 py-2 px-8 w-max">
               <button  >Explore Courses</button>
           </Link>
           </div>
